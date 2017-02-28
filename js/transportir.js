@@ -267,9 +267,9 @@ function arrow_move(event, arrow, red_arrow, sin, cos, center, lines, number_gro
     if(parseInt(arrow_vector.angle.toFixed(2))%10==0){
         audio.play();
     }
-    drag_line(event, arrow_vector.angle);
-    line_paint(lines, arrow_vector, center);
-
+    // drag_line(event, arrow_vector.angle);
+    // line_paint(lines, arrow_vector, center);
+    //
     var number_group_vector = arrow_vector.clone();
         number_group_vector.length = arrow_vector.length + 30;
     number_group.position = number_group_vector + center;
