@@ -191,13 +191,13 @@ var CirclePaint = {
         }
 
         var group_number = this._angle_number_draw();
-        arrow.onMouseDrag = function (event) {
+        group_number.onMouseDrag = function (event) {
 
             arrow_move(event, arrow, red_arrow, sin, cos, center, lines, group_number);
         };
-        red_arrow.onMouseDrag = function (event) {
-            arrow_move(event, arrow, red_arrow, sin, cos, center, lines, group_number);
-        };
+        // red_arrow.onMouseDrag = function (event) {
+        //     arrow_move(event, arrow, red_arrow, sin, cos, center, lines, group_number);
+        // };
 
     },
     cross_draw: function(){
