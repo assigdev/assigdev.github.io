@@ -61,7 +61,7 @@ var strelka = new Path();
 strelka.add(center);
 strelka.add(leftSide);
 strelka.strokeColor = 'red';
-strelka.strokeWidth = 4;
+strelka.strokeWidth = 8;
 strelka.onMouseDrag = function(event) {
     var event_vector = event.point - center;
     var strelka_vector = strelka.segments[1].point - center;
@@ -70,7 +70,6 @@ strelka.onMouseDrag = function(event) {
         audio.play();
         console.log('***************');
     }
-    ugol.innerText = event_vector.angle;
     var endSh = strelka_vector + center;
     strelka.segments[1].point = endSh;
 };
