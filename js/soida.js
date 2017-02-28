@@ -58,13 +58,31 @@
              rad = 0,
              j=30,
              y=0,
+             sin_ugla=0,
             center=new Point(this.part_width, this.part_height),
             sin = new Path();
          sin.add(center);
          sin.strokeColor = this.sin_style.strokeColor;
          for(i=this.width/2+30; i<=this.width-30; i+=30){
              rad = j*Math.PI/180;
-             var sin_ugla = Math.sin(rad).toFixed(1);
+             sin_ugla = Math.sin(rad).toFixed(1);
+             if (sin_ugla<0){
+                 y= sin_ugla * -150 +200;
+             }
+             else {
+                 y = (1-sin_ugla) * 150 + 50;
+             }
+             sin.add(new Point(i,y));
+             sin.smooth();
+
+             console.log(Math.sin(rad).toFixed(1));
+             console.log(j);
+             console.log(y);
+             j+=30;
+         }
+         for(i=this.width/2+30; i<=this.width-30; i+=30){
+             rad = j*Math.PI/180;
+             sin_ugla = Math.sin(rad).toFixed(1);
              if (sin_ugla<0){
                  y= sin_ugla * -150 +200;
              }
@@ -86,13 +104,14 @@
              rad = 0,
              j=30,
              y=0,
+             sin_ugla=0,
             center=new Point(this.part_width, 50),
             sin = new Path();
          sin.add(center);
          sin.strokeColor = this.sin_style.strokeColor;
          for(i=this.width/2+30; i<=this.width-30; i+=30){
              rad = j*Math.PI/180;
-             var sin_ugla = Math.cos(rad).toFixed(1);
+             sin_ugla = Math.cos(rad).toFixed(1);
              if (sin_ugla<0){
                  y= sin_ugla * -150 +200;
              }
@@ -153,4 +172,4 @@
 };
 
 CirclePaint.cross_draw();
-CirclePaint.cos_draw();
+CirclePaint.sin_draw();
