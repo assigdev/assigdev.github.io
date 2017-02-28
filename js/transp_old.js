@@ -61,7 +61,7 @@ var strelka = new Path();
 strelka.add(center);
 strelka.add(leftSide);
 strelka.strokeColor = 'red';
-strelka.strokeWidth = 8;
+strelka.strokeWidth = 14;
 strelka.onMouseDrag = function(event) {
     var event_vector = event.point - center;
     var strelka_vector = strelka.segments[1].point - center;
